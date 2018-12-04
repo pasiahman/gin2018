@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gin2018/app/http/controllers"
+	HotelUIApiControllers "gin2018/app/hotel/ui/api/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -9,9 +9,9 @@ import (
 type Api struct{}
 
 func (Api) Include(router *gin.Engine) {
-	router.GET("/api/hotel", controllers.HotelController{}.Index)
-	router.POST("/api/hotel", controllers.HotelController{}.Store)
-	router.GET("/api/hotel/:id", controllers.HotelController{}.Show)
-	router.PUT("/api/hotel/:id", controllers.HotelController{}.Update)
-	router.DELETE("/api/hotel/:id", controllers.HotelController{}.Destroy)
+	router.GET("/api/hotel", HotelUIApiControllers.HotelController{}.Index)
+	router.POST("/api/hotel", HotelUIApiControllers.HotelController{}.Store)
+	router.GET("/api/hotel/:id", HotelUIApiControllers.HotelController{}.Show)
+	router.PUT("/api/hotel/:id", HotelUIApiControllers.HotelController{}.Update)
+	router.DELETE("/api/hotel/:id", HotelUIApiControllers.HotelController{}.Destroy)
 }
